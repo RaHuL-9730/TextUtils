@@ -50,7 +50,7 @@ export default function TextFrom(props) {
             <div className="mb-3 my-2" style={{ color: props.mode === 'light' ? '#042743' : 'white' }}>
                 <h1>{props.heading}</h1>
                 <div>
-                    <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'light' ? 'white' : 'grey', color: props.mode === 'light' ? 'black' : 'white' }} id="myBox" rows="5"></textarea>
+                    <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'light' ? 'white' : '#13466e', color: props.mode === 'light' ? 'black' : 'white' }} id="myBox" rows="5"></textarea>
                 </div>
                 <button className='btn btn-primary my-2 mx-2' onClick={handleUpClick}>Convert to Uppercase</button>
                 <button className='btn btn-primary my-2 mx-2' onClick={handleLowClick}>Convert to Lowercase</button>
@@ -64,8 +64,8 @@ export default function TextFrom(props) {
                 <h1>
                     Your Text Summary
                 </h1>
-                <p>{text.length === 0 ? 0 : text.split(" ").length} words and {text.length} characters</p>
-                <p>{text.length === 0 ? 0 : 0.008 * text.split(" ").length} Minutes read</p>
+                <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.length} characters</p>
+                <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes read</p>
                 <h2>Preview</h2>
                 <p>
                     {text.length > 0 ? text : 'Write something in Text Box above to preview here'}
