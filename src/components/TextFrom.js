@@ -29,9 +29,7 @@ export default function TextFrom(props) {
     }
 
     const handleCopy = () => {
-        var text = document.getElementById("myBox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         document.getSelection().removeAllRanges();
         props.showAlert('Text has been copied', 'success')
     }
@@ -66,7 +64,7 @@ export default function TextFrom(props) {
                 <h1>
                     Your Text Summary
                 </h1>
-                <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.length} characters</p>
+                <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.length} characters</p>
                 <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes read</p>
                 <h2>Preview</h2>
                 <p>

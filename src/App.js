@@ -25,7 +25,7 @@ function App() {
         }, 2000);
     }
 
-    const removeBodyClasses = () => {
+    /*const removeBodyClasses = () => {
         document.body.classList.remove('bg-light')
         document.body.classList.remove('bg-null')
         document.body.classList.remove('bg-dark')
@@ -33,15 +33,15 @@ function App() {
         document.body.classList.remove('bg-warning')
         document.body.classList.remove('bg-success')
 
-    }
+    }*/
 
-    const toggleMode = (cls) => {
-        removeBodyClasses()
-        document.body.classList.add('bg-' + cls)
-        console.log(document.body.classList.value)
-        if (mode === cls) {
+    const toggleMode = () => {
+        //removeBodyClasses()
+        //document.body.classList.add('bg-' + cls)
+        // console.log(document.body.classList.value)
+        if (mode === 'light') {
             setMode('dark')
-          //  document.body.style.backgroundColor = '#042743'
+            document.body.style.backgroundColor = '#042743'
             showAlert('Dark Mode Enable', 'success')
          //   document.title = 'TextUtils-Dark Mode'
             /* title change like scam install software of anti virus etc etc.  
@@ -53,7 +53,7 @@ function App() {
               }, 1500)*/
         } else {
             setMode('light')
-           // document.body.style.backgroundColor = 'white'
+            document.body.style.backgroundColor = 'white'
             showAlert('Light Mode Enable', 'success')
          //   document.title = 'TextUtils-Light Mode'
         }
