@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import Alert from "./components/Alert";
-import About from "./components/About";
+//import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextFrom from "./components/TextFrom";
-import {
+/*import {
     BrowserRouter as Router,
     Routes,
     Route
-} from "react-router-dom";
+} from "react-router-dom";*/
 
 function App() {
     const [mode, setMode] = useState('light')
@@ -47,7 +47,7 @@ function App() {
 
     return (
         <>
-            <Router>
+            {/* <Router>
             <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
             <Alert alert={alert} />
             <div className="container">
@@ -56,7 +56,13 @@ function App() {
                         <Route exact path="/" element={<TextFrom showAlert={showAlert} mode={mode} heading='Try TextUtils - Word Counter, Character Counter, Remove extra spaces' />} />
                     </Routes>
                 </div>
-            </Router >
+    </Router >*/}
+            <div className="Container">
+                <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+                <Alert alert={alert} />
+                <TextFrom showAlert={showAlert} mode={mode} heading='Try TextUtils - Word Counter, Character Counter, Remove extra spaces' />
+
+            </div>
         </>
     );
 }
