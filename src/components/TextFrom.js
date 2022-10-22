@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 export default function TextFrom(props) {
 
+
     const handleUpClick = () => {
         let newtext = text.toUpperCase()
         setText(newtext)
@@ -31,6 +32,7 @@ export default function TextFrom(props) {
         var text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        document.getSelection().removeAllRanges();
         props.showAlert('Text has been copied', 'success')
     }
 
@@ -48,16 +50,16 @@ export default function TextFrom(props) {
     return (
         <>
             <div className="mb-3 my-2" style={{ color: props.mode === 'light' ? '#042743' : 'white' }}>
-                <h1>{props.heading}</h1>
+                <h1 className='mb-2'>{props.heading}</h1>
                 <div>
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'light' ? 'white' : '#13466e', color: props.mode === 'light' ? 'black' : 'white' }} id="myBox" rows="5"></textarea>
                 </div>
-                <button className='btn btn-primary my-2 mx-2' onClick={handleUpClick}>Convert to Uppercase</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handleLowClick}>Convert to Lowercase</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handleCopy}>Copy Text</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handleTrimClick}>Remove Space at the End</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handleClearClick}>Clear Text</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleUpClick}>Convert to Uppercase</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleLowClick}>Convert to Lowercase</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleCopy}>Copy Text</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleTrimClick}>Remove Space at the End</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleClearClick}>Clear Text</button>
             </div>
 
             <div className='container my-2' style={{ color: props.mode === 'light' ? '#042743' : 'white' }}>
@@ -68,7 +70,7 @@ export default function TextFrom(props) {
                 <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes read</p>
                 <h2>Preview</h2>
                 <p>
-                    {text.length > 0 ? text : 'Write something in Text Box above to preview here'}
+                    {text.length > 0 ? text : 'Nothing to preview'}
                 </p>
 
             </div>

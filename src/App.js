@@ -29,7 +29,7 @@ function App() {
             setMode('dark')
             document.body.style.backgroundColor = '#042743'
             showAlert('Dark Mode Enable', 'success')
-            document.title = 'TextUtils-Dark Mode'
+         //   document.title = 'TextUtils-Dark Mode'
             /* title change like scam install software of anti virus etc etc.  
             setInterval(() => {
                   document.title = 'TextUtil is Amazing'
@@ -41,7 +41,7 @@ function App() {
             setMode('light')
             document.body.style.backgroundColor = 'white'
             showAlert('Light Mode Enable', 'success')
-            document.title = 'TextUtils-Light Mode'
+         //   document.title = 'TextUtils-Light Mode'
         }
     }
 
@@ -53,7 +53,7 @@ function App() {
             <div className="container">
                     <Routes>
                         <Route exact path="/about" element={<About mode={mode} />} />
-                        <Route exact path="/" element={<TextFrom showAlert={showAlert} mode={mode} />} />
+                        <Route exact path="/" element={<TextFrom showAlert={showAlert} mode={mode} heading='Try TextUtils - Word Counter, Character Counter, Remove extra spaces' />} />
                     </Routes>
                 </div>
             </Router >
