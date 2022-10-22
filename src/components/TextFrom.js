@@ -54,12 +54,12 @@ export default function TextFrom(props) {
                 <div>
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'light' ? 'white' : '#13466e', color: props.mode === 'light' ? 'black' : 'white' }} id="myBox" rows="5"></textarea>
                 </div>
-                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleUpClick}>Convert to Uppercase</button>
-                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleLowClick}>Convert to Lowercase</button>
-                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleCopy}>Copy Text</button>
-                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleTrimClick}>Remove Space at the End</button>
-                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handleClearClick}>Clear Text</button>
+                <button disabled={text.length === 0} className={`btn btn-${document.body.classList.value === 'bg-primary' ? 'danger' : 'primary'} my-2 mx-2`} onClick={handleUpClick} >Convert to Uppercase</button>
+                <button disabled={text.length === 0} className={`btn btn-${document.body.classList.value === 'bg-primary' ? 'danger' : 'primary'} my-2 mx-2`} onClick={handleLowClick}>Convert to Lowercase</button>
+                <button disabled={text.length === 0} className={`btn btn-${document.body.classList.value === 'bg-primary' ? 'danger' : 'primary'} my-2 mx-2`} onClick={handleCopy}>Copy Text</button>
+                <button disabled={text.length === 0} className={`btn btn-${document.body.classList.value === 'bg-primary' ? 'danger' : 'primary'} my-2 mx-2`} onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                <button disabled={text.length === 0} className={`btn btn-${document.body.classList.value === 'bg-primary' ? 'danger' : 'primary'} my-2 mx-2`} onClick={handleTrimClick}>Remove Space at the End</button>
+                <button disabled={text.length === 0} className={`btn btn-${document.body.classList.value === 'bg-primary' ? 'danger' : 'primary'} my-2 mx-2`} onClick={handleClearClick}>Clear Text</button>
             </div>
 
             <div className='container my-2' style={{ color: props.mode === 'light' ? '#042743' : 'white' }}>
